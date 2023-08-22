@@ -16,7 +16,6 @@ class ScreenHandler:
         self.dot.speed('fastest')
         self.dot.color("blue")
 
-
     def prompt(self, states_guessed):
         """
         Prompt for a user input.
@@ -25,7 +24,7 @@ class ScreenHandler:
         """
 
         self.response = self.display.textinput(title=f"{states_guessed}/28 States Correct",
-                                               prompt="Guess the name of the state.").title()
+                                               prompt="Guess the name of the state, or type 'skip'.").title()
         return self.response
 
     def write_text(self, text, coordinates):
