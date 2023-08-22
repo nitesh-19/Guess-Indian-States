@@ -11,6 +11,7 @@ MAP_DATA_DICT = {'Andhra Pradesh': (-113.0, -200.0), 'Arunachal Pradesh': (327.0
                  'Sikkim': (152.0, 162.0), 'Tamil Nadu': (-122.0, -307.0), 'Telangana': (-96.0, -121.0),
                  'Tripura': (240.0, 53.0), 'Uttar Pradesh': (-36.0, 128.0), 'Uttarakhand': (-92.0, 238.0),
                  'West Bengal': (135.0, 36.0)}
+
 states_list = list(MAP_DATA_DICT.keys())  # list of all the state names
 random.shuffle(states_list)
 
