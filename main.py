@@ -11,21 +11,23 @@ MAP_DATA_DICT = {'Andhra Pradesh': (-113.0, -200.0), 'Arunachal Pradesh': (327.0
                  'Sikkim': (152.0, 162.0), 'Tamil Nadu': (-122.0, -307.0), 'Telangana': (-96.0, -121.0),
                  'Tripura': (240.0, 53.0), 'Uttar Pradesh': (-36.0, 128.0), 'Uttarakhand': (-92.0, 238.0),
                  'West Bengal': (135.0, 36.0)}
-states_list = list(MAP_DATA_DICT.keys())
+states_list = list(MAP_DATA_DICT.keys())  # list of all the state names
 random.shuffle(states_list)
-print(states_list)
+
 screen = ScreenHandler()
 game_over = False
 states_list_index = 0
-states_guessed = []
-skipped = []
+states_guessed = []  # Stores correct guesses by the player
+skipped = []  # Stores the states skipped by the player
 while not game_over:
     if states_list_index >= len(states_list):
         print(f"Game Over! Your Score: {len(states_guessed)}")
         break
+
+    # Place dot on the state the users needs to guess
     coordinates = MAP_DATA_DICT[states_list[states_list_index]]
     screen.place_dot(coordinates)
-    screen.display.update()
+
     response = screen.prompt(len(states_guessed))
     print(f"Last input: {response}")
     if response in states_guessed:
@@ -39,10 +41,12 @@ while not game_over:
         if len(states_guessed) == len(MAP_DATA_DICT):
             print("All states guessed. You Win!")
             game_over = True
+
     elif response == "Skip":
         skipped.append(states_list[states_list_index])
         states_list_index += 1
         continue
+
     elif response == 'Exit':  # If user types 'Exit' then export all the states they missed to guess in a file.
         with open("missed_states.csv", "w") as missed_file:
             for key in MAP_DATA_DICT:
