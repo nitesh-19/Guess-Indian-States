@@ -26,7 +26,7 @@ while not game_over:
         if len(states_guessed) == len(MAP_DATA_DICT):
             print("All states guessed. You Win!")
             game_over = True
-    elif response == 'Exit':
+    elif response == 'Exit':  # If user types 'Exit' then export all the states they missed to guess in a file.
         with open("missed_states.csv", "w") as missed_file:
             for key in MAP_DATA_DICT:
                 if key in states_guessed:
