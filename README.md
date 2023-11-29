@@ -2,7 +2,7 @@
  A game where you try to recall all 28 states of india.<br>
 
 ![img.png](img.png)
-# To add your own map:
+# To add custom map:
 
 1. In 'screen_handler.py' change the existing gif to the gif of your map. Set height and width according to the file supplied and save your file.
 2. Run 'location_mapper.py' and follow the console prompts. Click in the center of the place where you want your final game to place the text.
